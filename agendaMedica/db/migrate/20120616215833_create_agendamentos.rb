@@ -9,7 +9,7 @@ class CreateAgendamentos < ActiveRecord::Migration
       t.integer :id_convenio
       t.boolean :concluido
       t.boolean :cancelado
-      t.string :prescricao
+      t.text :prescricao
 
       t.timestamps
     end

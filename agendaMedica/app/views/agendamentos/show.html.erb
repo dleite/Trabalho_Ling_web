@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @agendamento.id %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @agendamento.data %>
+</p>
+
+<p>
+  <b>Hora:</b>
+  <%= @agendamento.hora %>
+</p>
+
+<p>
+  <b>Id paciente:</b>
+  <%= @agendamento.id_paciente %>
+</p>
+
+<p>
+  <b>Id medico:</b>
+  <%= @agendamento.id_medico %>
+</p>
+
+<p>
+  <b>Id convenio:</b>
+  <%= @agendamento.id_convenio %>
+</p>
+
+<p>
+  <b>Concluido:</b>
+  <%= @agendamento.concluido %>
+</p>
+
+<p>
+  <b>Cancelado:</b>
+  <%= @agendamento.cancelado %>
+</p>
+
+<p>
+  <b>Prescricao:</b>
+  <%= @agendamento.prescricao %>
+</p>
+
+
+<%= link_to 'Edit', edit_agendamento_path(@agendamento) %> |
+<%= link_to 'Back', agendamentos_path %>

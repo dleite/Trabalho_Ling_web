@@ -1,4 +1,8 @@
 AgendaMedica::Application.routes.draw do
+  resources :pacientes
+
+  resources :agendamentos
+
   get "home/index"
 
   # The priority is based upon order of creation:

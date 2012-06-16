@@ -1,0 +1,53 @@
+<%= form_for(@agendamento) do |f| %>
+  <% if @agendamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@agendamento.errors.count, "error") %> prohibited this agendamento from being saved:</h2>
+
+      <ul>
+      <% @agendamento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :hora %><br />
+    <%= f.time_select :hora %>
+  </div>
+  <div class="field">
+    <%= f.label :id_paciente %><br />
+    <%= f.number_field :id_paciente %>
+  </div>
+  <div class="field">
+    <%= f.label :id_medico %><br />
+    <%= f.number_field :id_medico %>
+  </div>
+  <div class="field">
+    <%= f.label :id_convenio %><br />
+    <%= f.number_field :id_convenio %>
+  </div>
+  <div class="field">
+    <%= f.label :concluido %><br />
+    <%= f.check_box :concluido %>
+  </div>
+  <div class="field">
+    <%= f.label :cancelado %><br />
+    <%= f.check_box :cancelado %>
+  </div>
+  <div class="field">
+    <%= f.label :prescricao %><br />
+    <%= f.text_area :prescricao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

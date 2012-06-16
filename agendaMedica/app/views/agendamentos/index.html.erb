@@ -1,0 +1,39 @@
+<h1>Listing agendamentos</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Data</th>
+    <th>Hora</th>
+    <th>Id paciente</th>
+    <th>Id medico</th>
+    <th>Id convenio</th>
+    <th>Concluido</th>
+    <th>Cancelado</th>
+    <th>Prescricao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @agendamentos.each do |agendamento| %>
+  <tr>
+    <td><%= agendamento.id %></td>
+    <td><%= agendamento.data %></td>
+    <td><%= agendamento.hora %></td>
+    <td><%= agendamento.id_paciente %></td>
+    <td><%= agendamento.id_medico %></td>
+    <td><%= agendamento.id_convenio %></td>
+    <td><%= agendamento.concluido %></td>
+    <td><%= agendamento.cancelado %></td>
+    <td><%= agendamento.prescricao %></td>
+    <td><%= link_to 'Show', agendamento %></td>
+    <td><%= link_to 'Edit', edit_agendamento_path(agendamento) %></td>
+    <td><%= link_to 'Destroy', agendamento, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Agendamento', new_agendamento_path %>
