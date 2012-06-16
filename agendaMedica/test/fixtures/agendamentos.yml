@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  data: 2012-06-16
+  hora: 2012-06-16 16:20:18
+  id_paciente: 1
+  id_medico: 1
+  id_convenio: 1
+  concluido: false
+  cancelado: false
+  prescricao: MyString
+
+two:
+  id: 1
+  data: 2012-06-16
+  hora: 2012-06-16 16:20:18
+  id_paciente: 1
+  id_medico: 1
+  id_convenio: 1
+  concluido: false
+  cancelado: false
+  prescricao: MyString
