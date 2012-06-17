@@ -1,4 +1,8 @@
 AgendaMedica::Application.routes.draw do
+  resources :medicos
+
+  resources :convenios
+
   resources :pacientes
 
   resources :agendamentos

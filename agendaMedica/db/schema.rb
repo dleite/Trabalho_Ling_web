@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616215907) do
+ActiveRecord::Schema.define(:version => 20120617014903) do
 
   create_table "agendamentos", :force => true do |t|
     t.date     "data"

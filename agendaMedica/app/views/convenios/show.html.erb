@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @convenio.id %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @convenio.nome %>
+</p>
+
+
+<%= link_to 'Edit', edit_convenio_path(@convenio) %> |
+<%= link_to 'Back', convenios_path %>
