@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623182036) do
+ActiveRecord::Schema.define(:version => 20120623192048) do
 
   create_table "agendamentos", :force => true do |t|
     t.date     "data"
     t.time     "hora"
+    t.integer  "tempoconsulta"
     t.integer  "id_paciente"
     t.integer  "id_medico"
     t.integer  "id_convenio"
     t.boolean  "concluido"
     t.boolean  "cancelado"
     t.text     "prescricao"
-    t.time     "tempoconsulta"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

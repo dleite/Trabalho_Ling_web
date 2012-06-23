@@ -4,13 +4,13 @@ class CreateAgendamentos < ActiveRecord::Migration
       t.integer :id
       t.date :data
       t.time :hora
+      t.integer :tempoconsulta
       t.integer :id_paciente
       t.integer :id_medico
       t.integer :id_convenio
       t.boolean :concluido
       t.boolean :cancelado
       t.text :prescricao
-      t.time :tempoconsulta
 
       t.timestamps
     end

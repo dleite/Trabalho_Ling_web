@@ -42,8 +42,21 @@ class AgendamentosController < ApplicationController
   # POST /agendamentos.json
   def create
     @agendamento = Agendamento.new(params[:agendamento])
-
+    
+	
+    	
+	@resultado = Agendamento.find_by_sql(["select hora, tempoconsulta from agendamentos where hora >= ? and hora <= addtime(?, tempoconsulta) and id_medico = ? and id_paciente <> ?;"      , params[:hora], params[:hora], params[:id_medico], params[:id_paciente]]) ;
+    	
+   
+	 
     respond_to do |format|
+      
+      unless @resultaddo 
+       #raise "erro ao salvar"
+       redirect_to :action => 'new',  notice: 'Ja existe outro agendamento no mesmo horario.'         
+       return
+      end;
+      
       if @agendamento.save
         format.html { redirect_to @agendamento, notice: 'Agendamento was successfully created.' }
         format.json { render json: @agendamento, status: :created, location: @agendamento }
