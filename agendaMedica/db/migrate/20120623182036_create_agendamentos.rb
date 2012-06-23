@@ -10,6 +10,7 @@ class CreateAgendamentos < ActiveRecord::Migration
       t.boolean :concluido
       t.boolean :cancelado
       t.text :prescricao
+      t.time :tempoconsulta
 
       t.timestamps
     end

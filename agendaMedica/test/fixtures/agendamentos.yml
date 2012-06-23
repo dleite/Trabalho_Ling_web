@@ -2,22 +2,24 @@
 
 one:
   id: 1
-  data: 2012-06-16
-  hora: 2012-06-16 18:58:34
+  data: 2012-06-23
+  hora: 2012-06-23 15:20:36
   id_paciente: 1
   id_medico: 1
   id_convenio: 1
   concluido: false
   cancelado: false
   prescricao: MyText
+  tempoconsulta: 2012-06-23 15:20:36
 
 two:
   id: 1
-  data: 2012-06-16
-  hora: 2012-06-16 18:58:34
+  data: 2012-06-23
+  hora: 2012-06-23 15:20:36
   id_paciente: 1
   id_medico: 1
   id_convenio: 1
   concluido: false
   cancelado: false
   prescricao: MyText
+  tempoconsulta: 2012-06-23 15:20:36

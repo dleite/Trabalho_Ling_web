@@ -18,7 +18,7 @@ class AgendamentosControllerTest < ActionController::TestCase
 
   test "should create agendamento" do
     assert_difference('Agendamento.count') do
-      post :create, agendamento: { cancelado: @agendamento.cancelado, concluido: @agendamento.concluido, data: @agendamento.data, hora: @agendamento.hora, id: @agendamento.id, id_convenio: @agendamento.id_convenio, id_medico: @agendamento.id_medico, id_paciente: @agendamento.id_paciente, prescricao: @agendamento.prescricao }
+      post :create, agendamento: { cancelado: @agendamento.cancelado, concluido: @agendamento.concluido, data: @agendamento.data, hora: @agendamento.hora, id: @agendamento.id, id_convenio: @agendamento.id_convenio, id_medico: @agendamento.id_medico, id_paciente: @agendamento.id_paciente, prescricao: @agendamento.prescricao, tempoconsulta: @agendamento.tempoconsulta }
     end
 
     assert_redirected_to agendamento_path(assigns(:agendamento))
@@ -35,7 +35,7 @@ class AgendamentosControllerTest < ActionController::TestCase
   end
 
   test "should update agendamento" do
-    put :update, id: @agendamento, agendamento: { cancelado: @agendamento.cancelado, concluido: @agendamento.concluido, data: @agendamento.data, hora: @agendamento.hora, id: @agendamento.id, id_convenio: @agendamento.id_convenio, id_medico: @agendamento.id_medico, id_paciente: @agendamento.id_paciente, prescricao: @agendamento.prescricao }
+    put :update, id: @agendamento, agendamento: { cancelado: @agendamento.cancelado, concluido: @agendamento.concluido, data: @agendamento.data, hora: @agendamento.hora, id: @agendamento.id, id_convenio: @agendamento.id_convenio, id_medico: @agendamento.id_medico, id_paciente: @agendamento.id_paciente, prescricao: @agendamento.prescricao, tempoconsulta: @agendamento.tempoconsulta }
     assert_redirected_to agendamento_path(assigns(:agendamento))
   end
 

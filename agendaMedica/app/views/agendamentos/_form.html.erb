@@ -25,15 +25,15 @@
   </div>
   <div class="field">
     <%= f.label :id_paciente %><br />
-    <%= f.number_field :id_paciente %>
+    <%= f.collection_select(:id_paciente, Paciente.all, :id, :nome) %>  
   </div>
   <div class="field">
     <%= f.label :id_medico %><br />
-    <%= f.number_field :id_medico %>
+    <%= f.collection_select(:id_medico, Medico.all, :id, :nome) %>  
   </div>
   <div class="field">
     <%= f.label :id_convenio %><br />
-    <%= f.number_field :id_convenio %>
+    <%= f.collection_select(:id_convenio, Convenio.all, :id, :nome) %> 
   </div>
   <div class="field">
     <%= f.label :concluido %><br />
@@ -46,6 +46,10 @@
   <div class="field">
     <%= f.label :prescricao %><br />
     <%= f.text_area :prescricao %>
+  </div>
+  <div class="field">
+    <%= f.label :tempoconsulta %><br />
+    <%= f.time_select :tempoconsulta %>
   </div>
   <div class="actions">
     <%= f.submit %>
