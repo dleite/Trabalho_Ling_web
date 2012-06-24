@@ -1,4 +1,3 @@
-
 class AgendamentosController < ApplicationController
   # GET /agendamentos
   # GET /agendamentos.json
@@ -45,15 +44,17 @@ class AgendamentosController < ApplicationController
     
 	
     	
-	@resultado = Agendamento.find_by_sql(["select hora, tempoconsulta from agendamentos where hora >= ? and hora <= addtime(?, tempoconsulta) and id_medico = ? and id_paciente <> ?;"      , params[:hora], params[:hora], params[:id_medico], params[:id_paciente]]) ;
+	   @resultado = Agendamento.find_by_sql(["select hora, tempoconsulta from agendamentos where data = ? and hora >= ? and hora <= addtime(?, tempoconsulta) and id_medico = ? and id_paciente <> ?"   , 1, params[:hora], params[:hora], params[:id_medico], params[:id_paciente] ]) ;
     	
    
 	 
     respond_to do |format|
       
-      unless @resultaddo 
+      unless @resultado
        #raise "erro ao salvar"
-       redirect_to :action => 'new',  notice: 'Ja existe outro agendamento no mesmo horario.'         
+       #redirect_to :action => 'agendamento_duplicado',  notice: 'Ja existe outro agendamento no mesmo horario.'
+       flash.now[:error] = "Ja existe outro agendamento no mesmo horario"
+       render :action => "new"         
        return
       end;
       
