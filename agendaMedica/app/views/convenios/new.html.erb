@@ -1,5 +1,12 @@
 <h1>New convenio</h1>
-
+<% if @convenio.errors.any? %>
+	<h2>Erros:</h2>
+	<ul>
+		<% @convenio.errors.full_messages.each do |message| %>
+			<li> <%= message %> </li>
+		<% end %>r
+	</ul>
+<% end %>
 <%= render 'form' %>
 
 <%= link_to 'Back', convenios_path %>

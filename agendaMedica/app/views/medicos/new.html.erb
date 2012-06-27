@@ -1,5 +1,14 @@
 <h1>New medico</h1>
 
+<% if @medico.errors.any? %>
+	<h2>Erros:</h2>
+	<ul>
+		<% @medico.errors.full_messages.each do |message| %>
+			<li> <%= message %> </li>
+		<% end %>r
+	</ul>
+<% end %>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', medicos_path %>
