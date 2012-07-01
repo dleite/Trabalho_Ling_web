@@ -26,10 +26,12 @@ class AgendamentosController < ApplicationController
   def new
     @agendamento = Agendamento.new
 
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @agendamento }
     end
+	
   end
 
   # GET /agendamentos/1/edit
@@ -40,23 +42,20 @@ class AgendamentosController < ApplicationController
   # POST /agendamentos
   # POST /agendamentos.json
   def create
-    @agendamento = Agendamento.new(params[:agendamento])
-    
-	
-    	
-	   @resultado = Agendamento.find_by_sql(["select hora, tempoconsulta from agendamentos where data = ? and hora >= ? and hora <= addtime(?, tempoconsulta) and id_medico = ? and id_paciente <> ?"   , 1, params[:hora], params[:hora], params[:id_medico], params[:id_paciente] ]) ;
-    	
-   
-	 
+    @agendamento = Agendamento.new(params[:agendamento])        
+			
+    #@resultado = Agendamento.where("where data = :data and hora >= :hora and hora <= addtime(:hora, tempoconsulta) and id_medico = :id_medico and id_paciente <> :id_paciente",
+	#	[params[:data], params[:hora], params[:hora], params[:id_medico], params[:id_paciente]]);
+   		
     respond_to do |format|
       
-      unless @resultado
-       #raise "erro ao salvar"
-       #redirect_to :action => 'agendamento_duplicado',  notice: 'Ja existe outro agendamento no mesmo horario.'
-       flash.now[:error] = "Ja existe outro agendamento no mesmo horario"
-       render :action => "new"         
-       return
-      end;
+     # unless @resultado
+     #  raise "erro ao salvar"
+     #  redirect_to :action => 'agendamento_duplicado',  notice: 'Ja existe outro agendamento no mesmo horario.'
+     #  flash.now[:error] = "Ja existe outro agendamento no mesmo horario"
+     #  render :action => "new"         
+     #  return
+     # end;
       
       if @agendamento.save
         format.html { redirect_to @agendamento, notice: 'Agendamento was successfully created.' }
